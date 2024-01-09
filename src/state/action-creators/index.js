@@ -15,3 +15,22 @@ export const withdrawMoney = (amount) =>{
         })
     }
 }
+
+
+export const increment = (value) =>{
+        return (dispatch) => {
+            dispatch({
+                type:"increment",
+                payload: value
+            })
+        }
+}
+
+export const Decrement = (value) =>{
+    return (dispatch) => {
+        dispatch({
+            type:"decrement",
+            payload: value
+        })
+    }
+}

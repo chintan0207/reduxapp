@@ -7,8 +7,9 @@ const Shop = () => {
 
   const dispatch = useDispatch();
   const balance = useSelector(state => state.amount);
+  const value = useSelector(state => state.value)
 
-  const {depositMoney,withdrawMoney} = bindActionCreators(actionCreators,dispatch)
+  const {depositMoney,withdrawMoney,increment,Decrement} = bindActionCreators(actionCreators,dispatch)
   return (
     <div>
 
@@ -20,7 +21,11 @@ const Shop = () => {
   */}
   <button className="btn btn-primary mx-2" onClick={()=>{withdrawMoney(100)}}>-</button>
       Update Balance({balance})
-    <button className="btn btn-primary mx-2" onClick={()=>{depositMoney(100)}}>+</button>
+    <button className="btn btn-primary mx-2" onClick={()=>{depositMoney(100)}}>+</button> <br/>
+
+    <button className='btn btn-primary mx-2 mt-2' onClick={() => {increment(2)}} >+2 Increment</button>
+    <span className='mx-2'>Counter: {value}</span>
+    <button className='btn btn-primary mx-2' onClick={() => {Decrement(1)}}>-1 Decrement</button>
 
     </div>
   )
